@@ -1,24 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="rollADice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKq-d0-ebp">
+                                <rect key="frame" x="117" y="104" width="175" height="45"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="pOc-AU-oAA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Lucky 7"/>
+                                <connections>
+                                    <action selector="lucky7Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xaU-Gl-anG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXq-EC-MTF">
+                                <rect key="frame" x="15" y="104" width="82" height="40"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="gOo-xn-ByL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Below 7"/>
+                                <connections>
+                                    <action selector="below7Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="llj-tK-m6y"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dice1" translatesAutoresizingMaskIntoConstraints="NO" id="gjG-2F-8Lk">
+                                <rect key="frame" x="50" y="398.5" width="96" height="109"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="96" id="MtL-aG-Juw"/>
+                                    <constraint firstAttribute="width" secondItem="gjG-2F-8Lk" secondAttribute="height" multiplier="96:109" id="asO-F7-0Cg"/>
+                                    <constraint firstAttribute="height" constant="109" id="hJm-4Z-enk"/>
+                                    <constraint firstAttribute="width" secondItem="gjG-2F-8Lk" secondAttribute="height" multiplier="96:109" id="pTM-s4-S2I"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LtY-va-pXD">
+                                <rect key="frame" x="313" y="104" width="85" height="41"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Above 7"/>
+                                <connections>
+                                    <action selector="above7Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y0Y-Ie-1s2"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dice1" translatesAutoresizingMaskIntoConstraints="NO" id="cZg-60-N1h">
+                                <rect key="frame" x="191" y="398.5" width="96" height="109"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="96" id="El1-VC-TcE"/>
+                                    <constraint firstAttribute="height" constant="109" id="WMo-dU-HJH"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score = 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0p2-dt-jhk">
+                                <rect key="frame" x="155" y="741" width="104" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cZg-60-N1h" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="2Pk-DK-8P5"/>
+                            <constraint firstItem="QKq-d0-ebp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="117" id="9Xn-dU-mvJ"/>
+                            <constraint firstItem="IXq-EC-MTF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="CTf-qA-AAz"/>
+                            <constraint firstItem="QKq-d0-ebp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="EEH-4q-XmI"/>
+                            <constraint firstItem="cZg-60-N1h" firstAttribute="leading" secondItem="gjG-2F-8Lk" secondAttribute="trailing" constant="45" id="GP5-FV-jhX"/>
+                            <constraint firstItem="gjG-2F-8Lk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="HDC-AZ-5PT"/>
+                            <constraint firstItem="gjG-2F-8Lk" firstAttribute="width" secondItem="cZg-60-N1h" secondAttribute="width" id="MK3-H6-p2b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LtY-va-pXD" secondAttribute="trailing" constant="16" id="OuR-62-DwR"/>
+                            <constraint firstItem="LtY-va-pXD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="QzA-Xa-6fQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QKq-d0-ebp" secondAttribute="trailing" constant="122" id="XeM-fb-8lW"/>
+                            <constraint firstItem="0p2-dt-jhk" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="aBu-V6-qv4"/>
+                            <constraint firstItem="IXq-EC-MTF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="ff9-hZ-opg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0p2-dt-jhk" secondAttribute="bottom" constant="91" id="hJK-f2-TEE"/>
+                            <constraint firstItem="gjG-2F-8Lk" firstAttribute="height" secondItem="cZg-60-N1h" secondAttribute="height" id="l8E-u5-IlJ"/>
+                            <constraint firstItem="gjG-2F-8Lk" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="lvD-Da-T9G"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imgOne" destination="gjG-2F-8Lk" id="1C0-A8-Lv9"/>
+                        <outlet property="imgTwo" destination="cZg-60-N1h" id="W7h-cb-4Lp"/>
+                        <outlet property="lblScore" destination="0p2-dt-jhk" id="xBS-7B-n30"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="127.5" y="87.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Dice1" width="18.5" height="18.5"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
